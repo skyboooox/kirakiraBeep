@@ -18,7 +18,22 @@ int main(int argc, char const* argv[]){
 	int p = 60;
 	BPM(p * 1000);
 
+	FILE* fp;
+
+	if (argc != 2)
+	{
+		printf("使用: %s \n", argv[0]);
+		exit(EXIT_FAILURE);
+	}
+
+	if ((fopen_s(&fp, argv[1], "r")) == NULL)
+	{
+		printf("不能打开 %s\n", argv[1]);
+		exit(1);
+	}
 	
+	fclose(fp);
+
 	return 0;
 }
 
