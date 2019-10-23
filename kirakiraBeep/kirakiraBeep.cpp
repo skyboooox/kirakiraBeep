@@ -1,15 +1,8 @@
 ﻿#include <stdio.h>
 #include <Windows.h>
-#define C 523.25
-#define D 622
-#define E 682
-#define F 740
-#define G 831
-#define A 932
-#define B 1046
+#include "scale.h"
 
 int qu, er, si, liu, ba, sl;
-float a[9][12];
 
 int BPM(int p) {
 	qu = p / 60;//全音符
@@ -21,32 +14,11 @@ int BPM(int p) {
 	return p;
 }
 
-//int yin(){
-//	a[0][0]=16.352;
-//	for(int i=0;i<9;i++){
-//		for(int p=1;i<12;p++){
-//			a[i][p]=a[i][p-1]*1.059533;
-//		}
-//	}
-//	return 0;
-//}
-int main() {
+int main(int argc, char const* argv[]){
 	int p = 60;
 	BPM(p * 1000);
 
-	Beep(C, si);
-	Beep(C, si);
-	Beep(G, si);
-	Beep(G, si);
-	Beep(A, si);
-	Beep(A, si);
-	Beep(G, er);
-	//Beep(D,500);
-	//Beep(E,500);
-	//Beep(F,500);
-	//Beep(G,500);
-	//Beep(A,500);
-	//Beep(B,500);
+	
 	return 0;
 }
 

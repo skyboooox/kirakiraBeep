@@ -1,4 +1,4 @@
 ﻿  kirakiraBeep.cpp
-C:\Users\zcj92\Documents\GitHub\kirakiraBeep\kirakiraBeep\kirakiraBeep.cpp(37,7): warning C4244:  “参数”: 从“double”转换到“DWORD”，可能丢失数据
-C:\Users\zcj92\Documents\GitHub\kirakiraBeep\kirakiraBeep\kirakiraBeep.cpp(38,7): warning C4244:  “参数”: 从“double”转换到“DWORD”，可能丢失数据
+C:\Users\zcj92\Documents\GitHub\kirakiraBeep\kirakiraBeep\scale.h(15,1): warning C4005:  “C2S”: 宏重定义
+C:\Users\zcj92\Documents\GitHub\kirakiraBeep\kirakiraBeep\scale.h(2): message :  参见“C2S”的前一个定义
   kirakiraBeep.vcxproj -> C:\Users\zcj92\Documents\GitHub\kirakiraBeep\kirakiraBeep\Debug\kirakiraBeep.exe
