@@ -3,7 +3,6 @@
 #include "scale.h"
 
 int qu, er, si, liu, ba, sl;
-
 int BPM(int p) {
 	qu = p / 60;//全音符
 	er = qu / 2;//2分音符 
@@ -14,30 +13,44 @@ int BPM(int p) {
 	return p;
 }
 
-int main(int argc, char const* argv[]){
+int main(){
 	int p = 60;
 	BPM(p * 1000);
 
 	FILE* fp;
-
-	if (argc != 2)
+	char buffer[1000];
+	fopen_s(&fp, "新建文本文档.txt", "r");
+	if (fp == NULL)
 	{
-		printf("使用: %s \n", argv[0]);
-		exit(EXIT_FAILURE);
-	}
-
-	if ((fopen_s(&fp, argv[1], "r")) == NULL)
-	{
-		printf("不能打开 %s\n", argv[1]);
+		printf("不能打开 \n");
 		exit(1);
 	}
-	
+
+	while (!feof(fp))//循环读取每一行，直到文件尾
+	{
+		fgets(buffer, 1000, fp);//将fp所指向的文件一行内容读到缓冲区
+		printf("%s\n", buffer);//输出所读到的内容
+		for (size_t j = 0; buffer[j] == '\0'; j++)
+		for (size_t i = 0; i<j; i++)
+		{
+			if (buffer[i] == 'P') {
+
+			}
+			
+			printf("%d\n", i);
+		}
+		
+		   					
+
+	}
 	fclose(fp);
+	
 
 	return 0;
 }
 
 
+//blog.csdn.net/lynch0571/article/details/33329151
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
 // 调试程序: F5 或调试 >“开始调试”菜单
 
