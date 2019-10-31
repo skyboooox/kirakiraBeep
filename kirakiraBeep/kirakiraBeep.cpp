@@ -161,23 +161,16 @@ int main(int argc, char const* argv[]) {
 			i = i + 4;
 			if (buffer[i] == ' ') {//判断 “空格” 的位置，向下2个元素
 				TIME(i);
-			}
-			
+			}		
 			FQ(i);
 			Beep(fq, ms);
 			Sleep(3);
 			fq = 0, ms = 0;
 		}
 	}
-
 	fclose(fp);
-
-
 	return 0;
 }
-
-
-//blog.csdn.net/lynch0571/article/details/33329151
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
 // 调试程序: F5 或调试 >“开始调试”菜单
 
