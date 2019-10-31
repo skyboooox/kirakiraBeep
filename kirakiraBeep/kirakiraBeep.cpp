@@ -5,7 +5,8 @@
 int p,fen,ms,fq;
 char buffer[MAXSIZE];
 
-int BPM(int i) {//计算拍数，p
+int BPM(int i) //计算拍数，p
+{
 	if (buffer[i + 1] >= '0' && buffer[i + 1] <= '9') {
 		p = (buffer[i + 1] - '0') * 100;
 	}
@@ -19,7 +20,8 @@ int BPM(int i) {//计算拍数，p
 	return(1);
 }
 
-int TIME(int i) {//通过拍数 p ，计算实际毫秒数 ms 
+int TIME(int i)//通过拍数 p ，计算实际毫秒数 ms  
+{
 	if (buffer[i + 1] >= '0' && buffer[i + 1] <= '9')
 	{
 		fen = (buffer[i + 1] - '0') * 10;
@@ -37,7 +39,8 @@ int TIME(int i) {//通过拍数 p ，计算实际毫秒数 ms
 	return(1);
 
 }
-int FQ(int i) {//频率
+int FQ(int i)//频率
+{
 	if (buffer[i + 3] == 'C') {
 		if (buffer[i + 4] == '1') fq = 130;
 		if (buffer[i + 4] == '2') fq = 261;
@@ -130,14 +133,14 @@ int FQ(int i) {//频率
 		if (buffer[i + 4] == '4') fq = 1975;
 		if (buffer[i + 4] == '5') fq = 3951;
 	}
-	if (buffer[i + 3] == 'S') 	fq = 1;
+	if (buffer[i + 3] == 'S') Sleep(ms);
 	i = i + 4;
 	return(1);
 }
 
-int main() {
+int main(int argc, char const* argv[]) {
 	FILE* fp;
-	fopen_s(&fp, "新建文本文档.txt", "r");
+	fopen_s(&fp, "argv[1]'", "r");
 	if (fp == NULL) {
 		printf("不能打开 \n");
 		exit(1);
@@ -145,7 +148,7 @@ int main() {
 
 	while (!feof(fp))//循环读取每一行，直到文件尾
 	{
-		fgets(buffer, 1000, fp);//将fp所指向的文件一行内容读到缓冲区
+		fgets(buffer, MAXSIZE, fp);//将fp所指向的文件一行内容读到缓冲区
 		size_t j=0;
 		while (buffer[j] != '\0')//求数组结尾
 		{
@@ -162,6 +165,7 @@ int main() {
 			
 			FQ(i);
 			Beep(fq, ms);
+			Sleep(3);
 			fq = 0, ms = 0;
 		}
 	}
