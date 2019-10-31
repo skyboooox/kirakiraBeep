@@ -140,7 +140,7 @@ int FQ(int i)//频率
 
 int main(int argc, char const* argv[]) {
 	FILE* fp;
-	fopen_s(&fp, "argv[1]'", "r");
+	fopen_s(&fp, argv[1], "r");
 	if (fp == NULL) {
 		printf("不能打开 \n");
 		exit(1);
